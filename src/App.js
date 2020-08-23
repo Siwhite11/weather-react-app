@@ -1,7 +1,8 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import Weather from "./Weather";
+import Extras from "./Extras";
+import CurrentLocation from "./CurrentLocation";
 
 export default function Container() {
   return (
@@ -13,7 +14,7 @@ export default function Container() {
           <h2>
             <span id="tempNow" />
             <a href="#" id="f-link" className="active">
-              75 °F{" "}
+              °F
             </a>{" "}
             |{" "}
             <a href="#" id="c-link">
@@ -37,10 +38,11 @@ export default function Container() {
                 value="Current Location"
               />
             </form>
+
             <h4>Mon August 3st 2020</h4>
             <br />
             <ul>
-              <Weather />
+              <Extras />
             </ul>
             <br />
 
@@ -49,7 +51,7 @@ export default function Container() {
                 {" "}
                 Open Source code by{" "}
                 <a
-                  href="https://github.com/Siwhite11/weather-app"
+                  href="https://github.com/Siwhite11/weather-react-app"
                   target="_blank"
                 >
                   Stephanie White{" "}
