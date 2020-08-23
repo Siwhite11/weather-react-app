@@ -2,7 +2,6 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Extras from "./Extras";
-import CurrentLocation from "./CurrentLocation";
 
 export default function Container() {
   return (
