@@ -78,5 +78,9 @@ small {
   text-decoration: none;
 }
 ul {
-  list-style-type: "none";
+  display: block;
+  font-size: 25px;
+  margin: auto;
+  list-style-type: none;
+  text-align: center;
 }
