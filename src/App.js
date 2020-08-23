@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "./logo.svg";
+
 import "./App.css";
 import Extras from "./Extras";
 
@@ -12,14 +12,7 @@ export default function Container() {
         <div className="col">
           <h2>
             <span id="tempNow" />
-            <a href="#" id="f-link" className="active">
-              °F
-            </a>{" "}
-            |{" "}
-            <a href="#" id="c-link">
-              {" "}
-              °C{" "}
-            </a>
+            °F | °C
           </h2>
           <h2>
             {" "}
@@ -49,10 +42,7 @@ export default function Container() {
               <small class="me">
                 {" "}
                 Open Source code by{" "}
-                <a
-                  href="https://github.com/Siwhite11/weather-react-app"
-                  target="_blank"
-                >
+                <a href="https://github.com/Siwhite11/weather-react-app">
                   Stephanie White{" "}
                 </a>
               </small>
