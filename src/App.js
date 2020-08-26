@@ -42,7 +42,10 @@ export default function Container() {
               <small class="me">
                 {" "}
                 Open Source code by{" "}
-                <a href="https://github.com/Siwhite11/weather-react-app">
+                <a
+                  href="https://github.com/Siwhite11/weather-react-app"
+                  target="_blank"
+                >
                   Stephanie White{" "}
                 </a>
               </small>
