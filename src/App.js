@@ -43,7 +43,7 @@ export default function Container() {
                 {" "}
                 Open Source code by{" "}
                 <a
-                  href="https://github.com/Siwhite11/weather-react-app"
+                  href="https://github.com/Siwhite11/weather-react-app" // eslint-disable-next-line
                   target="_blank"
                 >
                   Stephanie White{" "}
