@@ -34,14 +34,15 @@ export default function Search(response) {
   }
 
   return (
-    <div className="SearchBar">
+    <div>
       <form onSubmit={handleSubmit}>
         <input
           type="search"
           placeholder="Enter a city"
+          autoFocus="on"
           onChange={changeCity}
         ></input>
-        <input type="submit" value="Search"></input>
+        <input className="searchCity" type="submit" value="Search"></input>
       </form>
       <h2>{message}</h2>
     </div>
