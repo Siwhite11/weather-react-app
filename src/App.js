@@ -5,53 +5,47 @@ import Extras from "./Extras";
 
 export default function Container() {
   return (
-    <div class="container">
+    <div className="App">
       <h1>New York</h1>
+      <h4>Mon August 3st 2020</h4>
+      <h2>
+        <span id="tempNow" />
+        75°F | °C
+      </h2>
+      <br />
 
       <div className="row">
-        <div className="col">
-          <h2>
-            <span id="tempNow" />
-            °F | °C
-          </h2>
-          <h2>
-            {" "}
-            <span id="description" />
-          </h2>
-          <img id="icon" className="now" src="" alt="" />
-          <div class="col">
-            <span class="info" />
+        <div class="col-6">
+          <span class="info" />
 
-            <form>
-              <input
-                className="search2"
-                id="location"
-                type="submit"
-                value="Current Location"
-              />
-            </form>
+          <form>
+            <input
+              className="search2"
+              id="location"
+              type="submit"
+              value="Current Location"
+            />
+          </form>
 
-            <h4>Mon August 3st 2020</h4>
-            <br />
-            <ul>
-              <Extras />
-            </ul>
-            <br />
-
-            <div class="col">
-              <small class="me">
-                {" "}
-                Open Source code by{" "}
-                <a
-                  href="https://github.com/Siwhite11/weather-react-app" // eslint-disable-next-line
-                  target="_blank"
-                >
-                  Stephanie White{" "}
-                </a>
-              </small>
-            </div>
-          </div>
+          <br />
         </div>
+        <div class="col">
+          <Extras />
+        </div>
+
+        <br />
+      </div>
+      <div class="col">
+        <small className="me">
+          {" "}
+          Open Source code by{" "}
+          <a
+            href="https://github.com/Siwhite11/weather-react-app" // eslint-disable-next-line
+            target="_blank"
+          >
+            Stephanie White{" "}
+          </a>
+        </small>
       </div>
     </div>
   );
