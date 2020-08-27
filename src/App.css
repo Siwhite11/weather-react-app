@@ -82,4 +82,5 @@ ul {
   font-size: 25px;
   margin: auto;
   list-style-type: none;
+  text-transform: capitalize;
 }
