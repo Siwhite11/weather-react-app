@@ -15,7 +15,7 @@ export default function Container(props) {
       city: response.data.name,
       description: response.data.weather[0].description,
       date: new Date(response.data.dt * 1000),
-      //iconUrl: response.data.weather[0].icon,
+      iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
     });
   }
 
@@ -35,7 +35,9 @@ export default function Container(props) {
         <div className="row">
           <div class="col-6">
             <ul>
-              <li>{weatherData.iconUrl}</li>
+              <li>
+                <img src={weatherData.iconUrl} alt="weather icons" />
+              </li>
               <li>{weatherData.description}</li>
               <li>Humidity: {weatherData.humidity}%</li>
               <li>Wind: {Math.round(weatherData.wind)}km/h</li>
