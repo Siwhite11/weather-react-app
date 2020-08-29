@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./App.css";
-import Extras from "./Extras";
-import FormattedDate from "./FormattedDate";
+
+import WeatherInfo from "./WeatherInfo";
 
 export default function Container(props) {
+  const [city, setCity] = useState(props.defaultCity);
   const [weatherData, setWeatherData] = useState({ ready: false });
   function handleResponse(response) {
     setWeatherData({
@@ -19,38 +20,37 @@ export default function Container(props) {
     });
   }
 
+  function search() {
+    let apiKey = "619faf68e45e8f55d57c0c3b00b02041";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    search();
+  }
+
+  function handleCityChange(event) {
+    setCity(event.target.value);
+  }
+
   if (weatherData.ready) {
     return (
       <div className="App">
-        <h1>{weatherData.city}</h1>
-
-        <h4>
-          <FormattedDate date={weatherData.date} />
-        </h4>
-        <h2>
-          <span id="tempNow" />
-          {Math.round(weatherData.temperature)}°F | °C
-        </h2>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="search"
+            placeholder="Enter a city"
+            autoFocus="on"
+            onChange={handleCityChange}
+          ></input>
+          <input className="searchCity" type="submit" value="Search"></input>
+        </form>
+        <WeatherInfo data={weatherData} />
         <br />
-        <div className="row">
-          <div class="col-6">
-            <ul>
-              <li>
-                <img src={weatherData.iconUrl} alt="weather icons" />
-              </li>
-              <li>{weatherData.description}</li>
-              <li>Humidity: {weatherData.humidity}%</li>
-              <li>Wind: {Math.round(weatherData.wind)}km/h</li>
-            </ul>
 
-            <br />
-          </div>
-          <div class="col">
-            <Extras />
-          </div>
-
-          <br />
-        </div>
         <div class="col">
           <small className="me">
             {" "}
@@ -66,11 +66,7 @@ export default function Container(props) {
       </div>
     );
   } else {
-    let apiKey = "619faf68e45e8f55d57c0c3b00b02041";
-
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&units=imperial&appid=${apiKey}`;
-    axios.get(apiUrl).then(handleResponse);
-
+    search();
     return "Loading...";
   }
 }
