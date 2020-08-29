@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./App.css";
 import Extras from "./Extras";
+import FormattedDate from "./FormattedDate";
 
 export default function Container(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -13,7 +14,8 @@ export default function Container(props) {
       humidity: response.data.main.humidity,
       city: response.data.name,
       description: response.data.weather[0].description,
-      iconUrl: response.data.weather[0].icon,
+      date: new Date(response.data.dt * 1000),
+      //iconUrl: response.data.weather[0].icon,
     });
   }
 
@@ -21,13 +23,15 @@ export default function Container(props) {
     return (
       <div className="App">
         <h1>{weatherData.city}</h1>
-        <h4>Mon August 3rd 2020</h4>
+
+        <h4>
+          <FormattedDate date={weatherData.date} />
+        </h4>
         <h2>
           <span id="tempNow" />
           {Math.round(weatherData.temperature)}°F | °C
         </h2>
         <br />
-
         <div className="row">
           <div class="col-6">
             <ul>
