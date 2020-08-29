@@ -36,7 +36,7 @@ export default function Container(props) {
           <div class="col-6">
             <ul>
               <li>{weatherData.iconUrl}</li>
-              <li>Description: {weatherData.description}</li>
+              <li>{weatherData.description}</li>
               <li>Humidity: {weatherData.humidity}%</li>
               <li>Wind: {Math.round(weatherData.wind)}km/h</li>
             </ul>
