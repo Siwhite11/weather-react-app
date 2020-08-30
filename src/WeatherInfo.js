@@ -1,6 +1,7 @@
 import React from "react";
 //import axios from "axios";
 import FormattedDate from "./FormattedDate";
+import DisplayConversion from "./DisplayConversion";
 
 export default function WeatherInfo(props) {
   return (
@@ -12,7 +13,7 @@ export default function WeatherInfo(props) {
       </h4>
       <h2>
         <span id="tempNow" />
-        {Math.round(props.data.temperature)}°F | °C
+        <DisplayConversion fahrenheit={props.data.temperature} />
       </h2>
       <div className="row">
         <div className="col">
