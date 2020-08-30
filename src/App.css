@@ -60,10 +60,9 @@ h4 {
   margin: auto;
 }
 
-#c-link,
-#f-link {
-  color: #000000;
-  cursor: default;
+.unit:hover {
+  background: #3b7691;
+  color: #fff;
 }
 
 #f-link:hover,
