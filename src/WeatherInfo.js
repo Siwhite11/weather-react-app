@@ -2,6 +2,7 @@ import React from "react";
 //import axios from "axios";
 import FormattedDate from "./FormattedDate";
 import DisplayConversion from "./DisplayConversion";
+import WeatherIcon from "./WeatherIcon";
 
 export default function WeatherInfo(props) {
   return (
@@ -19,7 +20,7 @@ export default function WeatherInfo(props) {
         <div className="col">
           <ul>
             <li>
-              <img src={props.data.iconUrl} alt="weather icons" />
+              <WeatherIcon code={props.data.icon} />
             </li>
             <li>{props.data.description}</li>
             <li>Humidity: {props.data.humidity}%</li>
