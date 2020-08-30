@@ -3,6 +3,7 @@ import axios from "axios";
 import "./App.css";
 
 import WeatherInfo from "./WeatherInfo";
+import WeatherForecast from "./WeatherForecast";
 
 export default function Container(props) {
   const [city, setCity] = useState(props.defaultCity);
@@ -16,7 +17,7 @@ export default function Container(props) {
       city: response.data.name,
       description: response.data.weather[0].description,
       date: new Date(response.data.dt * 1000),
-      iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: response.data.weather[0].icon,
     });
   }
 
@@ -50,11 +51,11 @@ export default function Container(props) {
         </form>
         <WeatherInfo data={weatherData} />
         <br />
+        <WeatherForecast city={weatherData.city} />
 
         <div class="col">
           <small className="me">
-            {" "}
-            Open Source code by{" "}
+            <br /> Open Source code by{" "}
             <a
               href="https://github.com/Siwhite11/weather-react-app" // eslint-disable-next-line
               target="_blank"
