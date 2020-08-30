@@ -12,10 +12,6 @@ export default function DisplayConversion(props) {
     setUnit("fahrenheit");
   }
 
-  function celsius() {
-    return ((props.fahrenheit - 32) * 5) / 9;
-  }
-
   if (unit === "fahrenheit") {
     return (
       <div>
@@ -32,7 +28,7 @@ export default function DisplayConversion(props) {
     return (
       <div>
         <span>
-          {Math.round(props.celsius)}°C|
+          {Math.round(celsius)}°C|
           <button className="unit" onClick={showFahrenheit}>
             °F
           </button>
