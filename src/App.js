@@ -51,8 +51,9 @@ export default function Container(props) {
         </form>
         <WeatherInfo data={weatherData} />
         <br />
-        <WeatherForecast city={weatherData.city} />
-
+        <div className="row">
+          <WeatherForecast city={weatherData.city} />
+        </div>
         <div class="col">
           <small className="me">
             <br /> Open Source code by{" "}
